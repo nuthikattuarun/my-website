@@ -3,29 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .header{
-      background-color: red;
-      width: 100%;
-      height: 100%;
-      text-align: left;
-      padding-right: opx;
-    }
-    .button{
-      background-color: blueviolet;
-      padding:1px;
-      margin-right: 20px;
-      
+  <title>NextGen Digital Services</title>
+  <!--Tailwind cdn-->
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    }
-  </style>
 </head>
 <body>
-<div class="header">
-<button>Hello</button>
-</div>
-
   
+  <!--Header-->
+  <header class="bg-white shadow-md">
+    <div class=" container mx-auto px-6 py-4 flex justify-between  items-center">
+
+    <!--Logo-->
+    <div class="flex space-x-2">
+      <h1></h1>
+    <img src="" alt="logo" class="h-10 w-10">
+    </div>
+
+    <!---toogle/javascript-->
+    <button id="menu-btn" class = "md:hidden text-2xl" >☰</button>
+
+    <!--Menu-->
+    <nav id="menu" class="hidden md:block">
+      <ul class="flex flex-col md:flex-row md:space-x-6">
+        <li><a href="#Hero" class="text-gray-700 hover:text-blue-600">HOME</a></li>
+        <li><a href="#Services" class=" text-gray-700 hover:text-blue-600">SERVICES</a></li>
+        <li><a href="#contact" class="text-grey-700 hover:text-blue-600">CONTACT</a></li>
+     </ul>
+    </nav>
+    </div>
+  </header>
+
+  <!--Hero section-->
+  <section  id="Hero">
+   <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/heros.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/hero02.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/hero001.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+</div>
+  </section>
+  
+  <!--Services Section-->
+  <section id="Service" class="py-16 bg-gray-100 ">
+    <div class="container mx-auto px-6 text-center">
+     <h2 class="text-3xl font-bold mb-12">OUR SERVICES</h2>
+
+     <div class="grid md:grid-cols-3 gap-8">
+
+      <!--Section-1-->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <img src="assets/images/section1.jpg" alt="Image">
+      <h3 class="text-xl font-semibold mb-3">WEB DEVELOPMENT</h3>
+      <p class="text-gray-600">We build Modern and Responsive Websites for your business.</p>
+    </div>
+     
+    <!--Section-2-->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <img src="assets/images/section2.jpg" alt="">
+      <h3 class="text-xl font-semibold mb-3">DIGITAL MARKETING</h3>
+      <p class="text-gray-600 ">Promote your business with smart marketing strategies</p>
+    </div>
+
+    <!--Section-3-->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <img src="assets/images/section3.jpg" alt="">
+      <h3 class="text-xl font-semibold mb-3">SEO OPTIMIZATION</h3>
+      <p class="text-gray-600">Improve your website ranking and reach more customer</p>
+    </div>
+     </div>
+    </div>
+  </section>
+
+  <!--Contact Section-->
+   <section id="contact"class="py-16">
+    <div class="container mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center mb-8">CONTACT US</h2>
+
+    <form class="max-w-xl mx-auto">
+      
+      <input type="text" id="name" placeholder="Name" class="w-full border p-3 mb-4 rounded-lg"/>
+
+      <input type="email" id="email" placeholder ="Your Email" class=" w-full border p-3 mb-4 rounded-lg "/>
+
+      <textarea placeholder="Your Message" class="w-full border p-3 mb-4 rounded-lg" rows="4"></textarea>
+
+      <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-700 w-full">Send Message</button>
+    </form>
+    </div>
+   </section>
+
+   <!--footer section-->
+   <footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+    <!--Logo & About-->
+    <div>
+      <div class="flex items-center space-x-3 mb-4">
+        <img src="assets/images/logo1.webp" class="w-10 h-10 ">
+        <h3 class="text-xl font-semibold">NextGen Digital Services</h3>
+      </div>
+      <p>We provide web development, digital marketing and SEO services to grow your business.</p>
+    </div>
+   
+    <!--links-->
+    <div>
+      <h3 class="text-x1 font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text gray-400">
+        <li><a href="#Hero" class="hover:text-red ">Home</a></li>
+        <li><a href="#Services" class="hover:text-red">Services</a></li>
+        <li><a href="#Contact" class="hover:text-red">Contact</a></li>
+      </ul>
+    </div>
+
+<!--Social links-->
+<div>
+  <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+  <div class="flex space-x-4">
+    <img src="assets/logos/facebook.png" alt="" class="h-8 w-8 cursor-pointer">
+    <img src="assets/logos/instagram.webp" alt="" class="h-8 w-8 cursor-pointer">
+    <img src="assets/logos/Linkedin.webp" alt="" class="h-8 w-8 cursor-pointer">
+    <img src="assets/logos/Twitter.webp" alt="" class="h-8 w-8 cursor-pointer">
+
+  </div>
+  </div>
+
+
+  <!--Bottom-->
+  <div class="border-t border-gray-700 mt-8 pt-4 text-center text-grey-400">© 2026 NextGen Digital Services. <br>All right reserved.</div>
+</div>   
+</footer>
+
+<script src="./javascript/test.js"></script>
+
+
+
 </body>
 </html>

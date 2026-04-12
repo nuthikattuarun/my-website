@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyCast Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id = "body" class="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9');">
+
+  <!-- HEADER -->
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+  
+  <h1 class="text-2xl font-bold text-blue-600">🌤 SkyCast</h1>
+
+  <div class="relative">
+    <!-- Menu Button -->
+    <button id="menuBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      ☰ Menu
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div id="menuList" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg">
+      <ul class="text-gray-700">
+        <li class="p-3 hover:bg-gray-100 cursor-pointer">Home</li>
+        <li class="p-3 hover:bg-gray-100 cursor-pointer"> Current Location</li>
+        <li class="p-3 hover:bg-gray-100 cursor-pointer"> Dark Mode</li>
+        <li class="p-3 hover:bg-gray-100 cursor-pointer"> About</li>
+      </ul>
+    </div>
+  </div>
+
+</header>
+
+  <!-- MAIN -->
+  <main class="flex-grow flex flex-col items-center p-6">
+
+    <!-- SEARCH -->
+    <div class="w-full max-w-xl mb-6">
+      <div class="flex bg-white rounded-xl shadow-md overflow-hidden">
+        <input type="text" placeholder="Enter city..." class="flex-grow p-3 outline-none"/>
+        <button id="searchBtn" class="bg-blue-500 text-white px-6 hover:bg-blue-600">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div id="message" class="text-gray-500 mb-4">
+      Enter a city or use location 📍
+    </div>
+
+    <!-- WEATHER CARD -->
+  <div id="weatherCard" class="relative overflow-hidden rounded-3xl p-6 w-full max-w-md text-center mb-6 shadow-2xl transition-all duration-500">
+
+  <!-- Background Gradient Layer -->
+  <div id="cardBg" class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 opacity-90"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-white">
+
+    <h2 id="city" class="text-2xl font-bold">--</h2>
+    <p class="text-sm opacity-80">Today</p>
+
+    <!-- Icon -->
+    <img id="icon" class="w-24 mx-auto my-4 drop-shadow-lg" src="" />
+
+    <!-- Temperature -->
+    <h3 id="temp" class="text-5xl font-extrabold tracking-wide">--°C</h3>
+
+    <!-- Condition -->
+    <p id="condition" class="mt-2 text-lg opacity-90">--</p>
+
+  </div>
+
+</div>
+
+    <!-- EXTRA DETAILS -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl mt-6">
+
+  <!-- CARD -->
+  <div class="bg-white/60 backdrop-blur-lg p-5 rounded-2xl shadow-lg text-center hover:scale-105 transition">
+    <img src="assets/icons/water.png" class="w-10 mx-auto mb-2"/>
+    <p class="text-gray-600 text-sm">Humidity</p>
+    <h4 id="humidity" class="text-xl font-bold text-indigo-600">--%</h4>
+  </div>
+
+  <!-- CARD -->
+  <div class="bg-white/60 backdrop-blur-lg p-5 rounded-2xl shadow-lg text-center hover:scale-105 transition">
+    <img src="assets/icons/house.png" class="w-10 mx-auto mb-2"/>
+    <p class="text-gray-600 text-sm">Wind Speed</p>
+    <h4 id="wind" class="text-xl font-bold text-indigo-600">-- km/h</h4>
+  </div>
+
+  <!-- CARD -->
+  <div class="bg-white/60 backdrop-blur-lg p-5 rounded-2xl shadow-lg text-center hover:scale-105 transition">
+    <img src="assets/icons/clouds.png" class="w-10 mx-auto mb-2"/>
+    <p class="text-gray-600 text-sm">Pressure</p>
+    <h4 id="pressure" class="text-xl font-bold text-indigo-600">-- hPa</h4>
+  </div>
+
+  <!-- CARD -->
+  <div class="bg-white/60 backdrop-blur-lg p-5 rounded-2xl shadow-lg text-center hover:scale-105 transition">
+    <img src="assets/icons/sun.png" class="w-10 mx-auto mb-2"/>
+    <p class="text-gray-600 text-sm">Feels Like</p>
+    <h4 id="feels" class="text-xl font-bold text-indigo-600">--°C</h4>
+  </div>
+
+
+
+
+
+</div>
+
+  </main>
+
+  <!-- FOOTER -->
+ <footer class="bg-white/80 backdrop-blur-md mt-10">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
+
+    <!-- BRAND -->
+    <div>
+      <h2 class="text-xl font-bold text-blue-600 mb-3">🌤 SkyCast</h2>
+      <p class="text-sm">
+        SkyCast provides real-time weather updates with a clean and modern UI.
+        Stay updated anytime, anywhere.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div>
+      <h3 class="font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li class="hover:text-blue-500 cursor-pointer">Home</li>
+        <li class="hover:text-blue-500 cursor-pointer">Search Weather</li>
+        <li class="hover:text-blue-500 cursor-pointer">About</li>
+        <li class="hover:text-blue-500 cursor-pointer">Contact</li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div>
+      <h3 class="font-semibold mb-3">Follow Us</h3>
+      <div class="flex space-x-4">
+        <img src="assets/icons/facebook.png" class="w-6 cursor-pointer hover:scale-110 transition"/>
+        <img src="assets/icons/twitter.png" class="w-6 cursor-pointer hover:scale-110 transition"/>
+        <img src="assets/icons/instagram.png" class="w-6 cursor-pointer hover:scale-110 transition"/>
+        <img src="assets/icons/youtube.png" class="w-6 cursor-pointer hover:scale-110 transition"/>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="border-t text-center py-4 text-sm text-gray-500">
+   © 2026 SkyCast, Inc. "SkyCast" and sun design are registered trademarks of SkyCast, Inc. All Rights Reserved.
+  </div>
+</footer>
+
+  <script src="./javascript/weather.js"></script>
+
+
+</body>
+</html>
